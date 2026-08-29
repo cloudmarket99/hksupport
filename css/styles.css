@@ -1443,3 +1443,106 @@ img, video {
     text-align: center !important;
   }
 }
+
+/* Floating Right Quick Action Buttons */
+.right-quick-bar {
+  position: fixed;
+  right: 28px;
+  bottom: 110px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.quick-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.quick-kakao {
+  background-color: #FEE500;
+  color: #3C1E1E;
+  box-shadow: 0 8px 20px rgba(254, 229, 0, 0.45);
+}
+
+.quick-phone {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(2, 103, 255, 0.45);
+}
+
+.quick-btn:hover {
+  transform: translateY(-5px) scale(1.08);
+}
+
+.quick-kakao:hover {
+  box-shadow: 0 12px 28px rgba(254, 229, 0, 0.65);
+}
+
+.quick-phone:hover {
+  box-shadow: 0 12px 28px rgba(2, 103, 255, 0.65);
+}
+
+/* Tooltip on Hover */
+.quick-tooltip {
+  position: absolute;
+  right: 72px;
+  background-color: #111827;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.quick-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #111827;
+}
+
+.quick-btn:hover .quick-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 767.98px) {
+  .right-quick-bar {
+    right: 16px;
+    bottom: 120px;
+    gap: 10px;
+  }
+  .quick-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .quick-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .quick-tooltip {
+    display: none;
+  }
+}
