@@ -154,18 +154,13 @@ function initModal() {
   }
 }
 
-/* Floating Bottom Consultation Bar Handler - Auto Hide at Footer */
+/* Floating Bottom Consultation Bar Handler */
 function initFloatingBar() {
   const floatingBar = document.getElementById('floating-bar');
-  const footerEl = document.querySelector('.footer-section');
   if (!floatingBar) return;
 
   window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const footerTop = footerEl ? footerEl.offsetTop : document.body.offsetHeight;
-
-    // Show after scrolling 300px, but hide when reaching the footer area to avoid covering footer text
-    if (window.scrollY > 300 && scrollPosition < footerTop + 40) {
+    if (window.scrollY > 300) {
       floatingBar.style.opacity = '1';
       floatingBar.style.pointerEvents = 'auto';
     } else {
