@@ -504,40 +504,6 @@
     </div>
   </div>
 
-  <!-- Lead Capture Modal Form -->
-  <div class="modal-overlay" id="consulting-modal">
-    <div class="modal-card">
-      <div class="modal-close">&times;</div>
-      <h3 class="modal-title">세무·법률 1:1 무상 경정청구 진단</h3>
-      <p class="modal-subtitle">대표자명과 연락처를 남겨주시면, 법무법인 호경 세무·법률 전담팀이 1:1 맞춤 환급 진단 리포트를 안내해 드립니다.</p>
-
-      <form class="modal-form" id="lead-form">
-        <div class="form-group">
-          <label style="color: var(--text-dark);" for="input-company">대표자명 / 회사명</label>
-          <input type="text" id="input-company" class="input-field" placeholder="예: 홍길동 ((주)테크OOO)" required>
-        </div>
-
-        <div class="form-group">
-          <label style="color: var(--text-dark);" for="input-phone">연락처 (- 없이 입력)</label>
-          <input type="tel" id="input-phone" class="input-field" placeholder="01012345678" required>
-        </div>
-
-        <div class="form-group">
-          <label style="color: var(--text-dark);" for="input-service">상담 분야 선택</label>
-          <select id="input-service" class="input-field">
-            <option value="refund">최근 5년 과오납 세금 환급 (경정청구 특화)</option>
-            <option value="corp">법인세무 & 주식평가 자문</option>
-            <option value="audit">조세불복 & 세무조사 방어</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn-primary" style="width: 100%; height: 52px; font-size: 1.05rem; margin-top: 12px;">
-          24시간 무상 진단 신청하기
-        </button>
-      </form>
-    </div>
-  </section>
-
   <!-- Footer (HIGH CONTRAST DEDICATED BUSINESS INFORMATION BOX & FULL MENU LINKS) -->
   <footer class="footer-section">
     <div class="footer-container">
@@ -584,6 +550,40 @@
       </div>
     </div>
   </footer>
+
+  <!-- Lead Capture Modal Form (PLACED AT THE VERY BOTTOM OUTSIDE DOCUMENT FLOW) -->
+  <div class="modal-overlay" id="consulting-modal">
+    <div class="modal-card">
+      <div class="modal-close">&times;</div>
+      <h3 class="modal-title">세무·법률 1:1 무상 경정청구 진단</h3>
+      <p class="modal-subtitle">대표자명과 연락처를 남겨주시면, 법무법인 호경 세무·법률 전담팀이 1:1 맞춤 환급 진단 리포트를 안내해 드립니다.</p>
+
+      <form class="modal-form" id="lead-form">
+        <div class="form-group">
+          <label style="color: var(--text-dark);" for="input-company">대표자명 / 회사명</label>
+          <input type="text" id="input-company" class="input-field" placeholder="예: 홍길동 ((주)테크OOO)" required>
+        </div>
+
+        <div class="form-group">
+          <label style="color: var(--text-dark);" for="input-phone">연락처 (- 없이 입력)</label>
+          <input type="tel" id="input-phone" class="input-field" placeholder="01012345678" required>
+        </div>
+
+        <div class="form-group">
+          <label style="color: var(--text-dark);" for="input-service">상담 분야 선택</label>
+          <select id="input-service" class="input-field">
+            <option value="refund">최근 5년 과오납 세금 환급 (경정청구 특화)</option>
+            <option value="corp">법인세무 & 주식평가 자문</option>
+            <option value="audit">조세불복 & 세무조사 방어</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; height: 52px; font-size: 1.05rem; margin-top: 12px;">
+          24시간 무상 진단 신청하기
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Main JavaScript File -->
   <script src="js/main.js"></script>

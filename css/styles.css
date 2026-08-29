@@ -85,8 +85,6 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Global Heading Rules - h2 strictly set to weight 800 */
@@ -1073,9 +1071,9 @@ img, video {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 9999;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: none;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   opacity: 0;
   pointer-events: none;
@@ -1083,6 +1081,7 @@ img, video {
 }
 
 .modal-overlay.active {
+  display: flex !important;
   opacity: 1;
   pointer-events: auto;
 }
