@@ -984,7 +984,7 @@ img, video {
   padding: 0 28px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.4s ease-out, padding 0.3s ease;
   background-color: var(--bg-secondary);
   color: var(--text-medium);
   font-size: 1rem;
@@ -993,7 +993,7 @@ img, video {
 
 .faq-item.active .faq-answer {
   padding: 22px 28px;
-  max-height: 320px;
+  max-height: 600px; /* Increased to ensure answers are never clipped */
 }
 
 /* Modal Overlay & Lead Form */
@@ -1126,9 +1126,11 @@ img, video {
 .footer-section {
   background-color: var(--navy-dark);
   color: rgba(255, 255, 255, 0.75);
-  padding: 72px 40px 44px 40px;
+  padding: 72px 40px 80px 40px;
   font-size: 0.925rem;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-container {
