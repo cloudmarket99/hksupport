@@ -540,6 +540,121 @@ img, video {
   color: var(--text-dark);
 }
 
+/* Analytics Dashboard Box (2025~2026 National Refund Statistics) */
+.analytics-box {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 56px;
+  width: 100%;
+}
+
+.analytics-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.analytics-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 800;
+  background-color: rgba(2, 103, 255, 0.08);
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.analytics-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.analytics-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.analytics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--white);
+  border-color: rgba(2, 103, 255, 0.2);
+}
+
+.analytics-card.highlight {
+  background: #f0f6ff;
+  border: 2px solid var(--primary-blue);
+}
+
+.analytics-metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.analytics-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  line-height: 1;
+}
+
+.analytics-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge-blue {
+  background: rgba(2, 103, 255, 0.12);
+  color: var(--primary-blue);
+}
+
+.badge-gold {
+  background: rgba(255, 122, 0, 0.12);
+  color: var(--accent-gold);
+}
+
+.badge-gray {
+  background: rgba(107, 114, 128, 0.12);
+  color: var(--text-medium);
+}
+
+.analytics-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.35;
+}
+
+.analytics-desc {
+  font-size: 0.925rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
 /* Calculator Box */
 .calc-container {
   background: linear-gradient(135deg, var(--navy-dark) 0%, #132244 100%);
@@ -1454,6 +1569,7 @@ img, video {
   }
 
   .stats-grid,
+  .analytics-grid,
   .features-grid,
   .service-cards-grid,
   .experts-grid,

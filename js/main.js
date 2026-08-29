@@ -23,31 +23,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Animated Counters */
 function initCounters() {
-  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  const statNumbers = document.querySelectorAll('.stat-number[data-target], .analytics-value[data-target]');
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const target = parseInt(entry.target.getAttribute('data-target'));
+        const targetAttr = entry.target.getAttribute('data-target');
+        const target = parseFloat(targetAttr);
         const prefix = entry.target.getAttribute('data-prefix') || '';
         const suffix = entry.target.getAttribute('data-suffix') || '';
-        animateValue(entry.target, 0, target, 2000, prefix, suffix);
+        const isDecimal = targetAttr.includes('.');
+        animateValue(entry.target, 0, target, 2000, prefix, suffix, isDecimal);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
   statNumbers.forEach(num => observer.observe(num));
 }
 
-function animateValue(element, start, end, duration, prefix, suffix) {
+function animateValue(element, start, end, duration, prefix, suffix, isDecimal) {
   let startTimestamp = null;
   const step = (timestamp) => {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
     const easeOutProgress = 1 - Math.pow(1 - progress, 3);
-    const currentValue = Math.floor(easeOutProgress * (end - start) + start);
-    element.textContent = `${prefix}${currentValue.toLocaleString()}${suffix}`;
+    const currentValue = easeOutProgress * (end - start) + start;
+    const formattedValue = isDecimal ? currentValue.toFixed(1) : Math.floor(currentValue).toLocaleString();
+    element.textContent = `${prefix}${formattedValue}${suffix}`;
     if (progress < 1) {
       window.requestAnimationFrame(step);
     }
