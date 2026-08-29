@@ -34,6 +34,7 @@
         <a href="#experts" class="nav-link">세무·법률 자문단</a>
         <a href="#reviews" class="nav-link">고객 환급후기</a>
         <a href="#faq" class="nav-link">자주 묻는 질문</a>
+        <a href="#consultation" class="nav-link">무상진단 신청</a>
       </nav>
 
       <div class="header-actions">
@@ -450,7 +451,49 @@
     </div>
   </section>
 
-  <!-- Persistent Floating Bottom Bar (PERMANENTLY VISIBLE WHEN SCROLLED) -->
+  <!-- Inline Lead Application Form Section (신청폼 섹션 복원) -->
+  <section class="lead-form-section" id="consultation">
+    <div class="lead-form-container">
+      <div class="lead-form-header">
+        <div class="badge" style="background: rgba(2, 103, 255, 0.12); color: var(--primary-blue); margin-bottom: 16px; font-weight: 800;">
+          🛡️ 착수금 0원 / 세무·법률·회계 3중 입체 검토
+        </div>
+        <h2 class="lead-form-title">세무·법률 1:1 무상 경정청구 진단 신청</h2>
+        <p class="lead-form-desc">대표자명과 연락처를 남겨주시면, 법무법인 호경 세무·법률 전담팀이 최근 5년 과오납 세금 환급 리포트를 무상으로 안내해 드립니다.</p>
+      </div>
+
+      <form class="inline-lead-form" id="main-lead-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="main-input-company">대표자명 / 회사명</label>
+            <input type="text" id="main-input-company" class="input-field" placeholder="예: 홍길동 ((주)호경테크)" required>
+          </div>
+          <div class="form-group">
+            <label for="main-input-phone">연락처 (- 없이 입력)</label>
+            <input type="tel" id="main-input-phone" class="input-field" placeholder="01012345678" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="width: 100%;">
+            <label for="main-input-service">상담 분야 선택</label>
+            <select id="main-input-service" class="input-field">
+              <option value="refund">최근 5년 과오납 세금 환급 (경정청구 특화)</option>
+              <option value="corp">법인세무 & 주식평가 자문</option>
+              <option value="audit">조세불복 & 세무조사 방어</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; height: 56px; font-size: 1.1rem; margin-top: 12px;">
+          <span>24시간 무상 경정청구 진단 신청하기</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path d="M 10.5 0 L 18 7.5 M 18 7.5 L 10.5 15 M 18 7.5 L 0 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Persistent Floating Bottom Bar -->
   <div class="floating-bottom-bar" id="floating-bar" style="opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
     <div class="floating-content" id="div-2">
       <div class="floating-text">세무와 법률, 회계 동시 검토! 24시간 1:1 상담: <strong>1533-1198</strong></div>
@@ -495,7 +538,7 @@
     </div>
   </section>
 
-  <!-- Footer (EXACT SPECIFICATION) -->
+  <!-- Footer (EXACT SPECIFICATION & FULL MENU LINKS) -->
   <footer class="footer-section">
     <div class="footer-container">
       <div class="footer-top">
@@ -517,6 +560,8 @@
           <a href="#calculator">환급액 실시간계산</a>
           <a href="#experts">세무·법률 자문단</a>
           <a href="#reviews">고객 환급후기</a>
+          <a href="#faq">자주 묻는 질문</a>
+          <a href="#consultation">1:1 무상진단 신청</a>
         </div>
       </div>
 

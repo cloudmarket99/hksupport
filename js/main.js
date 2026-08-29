@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Consultation Modal
   initModal();
 
+  // Initialize Inline Lead Application Form
+  initInlineLeadForm();
+
   // Initialize Sticky Bottom Bar scroll handler
   initFloatingBar();
 
@@ -163,6 +166,26 @@ function initModal() {
       leadForm.reset();
     });
   }
+}
+
+/* Main Inline Lead Application Form Handler */
+function initInlineLeadForm() {
+  const mainLeadForm = document.getElementById('main-lead-form');
+  if (!mainLeadForm) return;
+
+  mainLeadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const companyName = document.getElementById('main-input-company').value;
+    const phone = document.getElementById('main-input-phone').value;
+
+    if (!companyName || !phone) {
+      showToast('⚠ 대표자명(기업명)과 연락처를 입력해 주세요.', 'warning');
+      return;
+    }
+
+    showToast(`🎉 ${companyName} 대표님, 1:1 세무상담이 정상 신청되었습니다! 곧 담당 세무사가 연락드립니다.`, 'success');
+    mainLeadForm.reset();
+  });
 }
 
 /* Floating Bottom Consultation Bar Handler - PERMANENTLY VISIBLE WHEN SCROLLED */
