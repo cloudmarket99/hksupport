@@ -162,7 +162,7 @@ function initModal() {
       }
 
       closeModal();
-      showToast(`🎉 ${companyName} 대표님, 1:1 세무상담이 정상 신청되었습니다! 곧 담당 세무사가 연락드립니다.`, 'success');
+      showToast(`🎉 ${companyName} 대표님, 1:1 세무·법률·회계 무상진단이 정상 신청되었습니다! 곧 담당 전문가가 연락드립니다.`, 'success');
       leadForm.reset();
     });
   }
@@ -183,7 +183,7 @@ function initInlineLeadForm() {
       return;
     }
 
-    showToast(`🎉 ${companyName} 대표님, 1:1 세무상담이 정상 신청되었습니다! 곧 담당 세무사가 연락드립니다.`, 'success');
+    showToast(`🎉 ${companyName} 대표님, 1:1 세무·법률·회계 무상진단이 정상 신청되었습니다! 곧 담당 전문가가 연락드립니다.`, 'success');
     mainLeadForm.reset();
   });
 }
