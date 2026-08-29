@@ -1058,6 +1058,19 @@ img, video {
   display: block;
 }
 
+.inline-lead-form .input-field,
+.inline-lead-form select,
+.inline-lead-form input {
+  background-color: var(--white) !important;
+  color: var(--text-dark) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.inline-lead-form select option {
+  background-color: var(--white) !important;
+  color: var(--text-dark) !important;
+}
+
 /* Modal Overlay & Lead Form - PERFECT CENTER ALIGNMENT & SCREEN LOCK */
 .modal-overlay {
   position: fixed;
@@ -1151,10 +1164,17 @@ img, video {
   padding: 14px 18px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-light);
+  background-color: var(--white) !important;
+  color: var(--text-dark) !important;
   font-size: 1rem;
   font-weight: 500;
   outline: none;
   transition: var(--transition);
+}
+
+.input-field option {
+  background-color: var(--white) !important;
+  color: var(--text-dark) !important;
 }
 
 .input-field:focus {
