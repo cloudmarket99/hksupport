@@ -116,22 +116,34 @@ function initModal() {
 
   if (!modalOverlay) return;
 
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   openButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modalOverlay.classList.add('active');
-    });
+    btn.addEventListener('click', openModal);
   });
 
   if (closeButton) {
-    closeButton.addEventListener('click', () => {
-      modalOverlay.classList.remove('active');
-    });
+    closeButton.addEventListener('click', closeModal);
   }
 
   modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) {
-      modalOverlay.classList.remove('active');
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+      closeModal();
     }
   });
 
@@ -146,8 +158,7 @@ function initModal() {
         return;
       }
 
-      // Hide modal and show success toast
-      modalOverlay.classList.remove('active');
+      closeModal();
       showToast(`🎉 ${companyName} 대표님, 1:1 세무상담이 정상 신청되었습니다! 곧 담당 세무사가 연락드립니다.`, 'success');
       leadForm.reset();
     });
@@ -157,10 +168,15 @@ function initModal() {
 /* Floating Bottom Consultation Bar Handler */
 function initFloatingBar() {
   const floatingBar = document.getElementById('floating-bar');
+  const footerEl = document.querySelector('.footer-section');
   if (!floatingBar) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const footerTop = footerEl ? footerEl.offsetTop : document.body.offsetHeight;
+
+    // Show after scrolling 300px, but hide when approaching footer so footer content is 100% visible
+    if (window.scrollY > 300 && scrollPosition < footerTop + 60) {
       floatingBar.style.opacity = '1';
       floatingBar.style.pointerEvents = 'auto';
     } else {
