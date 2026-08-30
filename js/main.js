@@ -19,7 +19,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Mobile Menu
   initMobileMenu();
+
+  // Initialize Hero Video (muted autoplay & infinite loop rotation)
+  initHeroVideo();
 });
+
+/* Hero Video Muted Autoplay & Loop Rotation */
+function initHeroVideo() {
+  const video = document.querySelector('.hero-video-box video');
+  if (!video) return;
+  
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      // Retry playing on user interaction if browser policy blocks initial autoplay
+      const enableAutoplay = () => {
+        video.play();
+        document.removeEventListener('click', enableAutoplay);
+        document.removeEventListener('touchstart', enableAutoplay);
+      };
+      document.addEventListener('click', enableAutoplay);
+      document.addEventListener('touchstart', enableAutoplay);
+    });
+  }
+}
 
 /* Animated Counters */
 function initCounters() {

@@ -399,8 +399,8 @@ img, video {
 
 .hero-video-box {
   width: 100%;
-  max-width: 440px;
-  aspect-ratio: 0.95 / 1;
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
@@ -1419,7 +1419,9 @@ img, video {
     height: min-content !important;
   }
   .hero-video-box {
-    height: 600px !important;
+    height: auto !important;
+    max-width: 360px !important;
+    aspect-ratio: 9 / 16 !important;
   }
   .hero-visual {
     width: 100% !important;
@@ -1555,9 +1557,9 @@ img, video {
 
   .hero-video-box {
     width: 100% !important;
-    max-width: 100% !important;
-    height: 260px !important;
-    aspect-ratio: auto !important;
+    max-width: 320px !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
   }
 
   .hero-bg-text {
