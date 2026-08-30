@@ -1395,6 +1395,70 @@ img, video {
   align-items: center;
 }
 
+/* Floating Right Quick Action Buttons (카카오톡 & 전화상담 우측 고정 퀵버튼) */
+.right-quick-bar {
+  position: fixed;
+  right: 32px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-end;
+  z-index: 1001;
+}
+
+.quick-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.quick-btn:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.quick-kakao {
+  background-color: #FEE500;
+  border: 1px solid #E6CF00;
+}
+
+.quick-phone {
+  background-color: var(--primary-blue);
+  border: 1px solid var(--primary-blue-hover);
+}
+
+.quick-tooltip {
+  position: absolute;
+  right: 68px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 24, 39, 0.88);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  opacity: 0.9;
+}
+
+.quick-btn:hover .quick-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-4px);
+  background: rgba(11, 19, 43, 0.96);
+}
+
 /* RESPONSIVE MEDIA QUERIES (TABLET & MOBILE OPTIMIZATION) */
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .hero-container {
